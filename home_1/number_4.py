@@ -88,6 +88,13 @@ class MainWindow(QMainWindow):
         self.g_map.setPixmap(pixmap)
         self.g_map.setScaledContents(True)
 
+    def clip(v, _min, _max):
+        if v < _min:
+            return _min
+        if v > _max:
+            return _max
+        return v
+
 
 app = QApplication(sys.argv)
 main_window = MainWindow()

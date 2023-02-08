@@ -8,6 +8,8 @@ import requests
 
 
 class MainWindow(QMainWindow):
+    g_map: QLabel
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         uic.loadUi('main_window.ui', self)

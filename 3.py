@@ -8,7 +8,6 @@ import requests
 
 
 class MainWindow(QMainWindow):
-    g_map: QLabel
     press_delta = 0.1
 
     def __init__(self, *args, **kwargs):
