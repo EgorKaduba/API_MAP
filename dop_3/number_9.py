@@ -116,7 +116,8 @@ class MainWindow(QMainWindow):
         else:
             self.pushButton_5.setStyleSheet("background-color: red;")
             self.postal = False
-        self.refresh_map()
+        self.adres.setText('')
+        self.search()
 
 
 def geo_locate(name, postal):
@@ -135,7 +136,7 @@ def geo_locate(name, postal):
         return -1, -1
     adres = [geo_objects[0]["GeoObject"]['metaDataProperty']['GeocoderMetaData']['text']]
     if 'postal_code' in geo_objects[0]["GeoObject"]['metaDataProperty']['GeocoderMetaData']['Address']:
-        adres[0] = adres[0] + geo_objects[0]["GeoObject"]['metaDataProperty']['GeocoderMetaData']['Address'][
+        adres[0] = adres[0] + ', ' + geo_objects[0]["GeoObject"]['metaDataProperty']['GeocoderMetaData']['Address'][
             'postal_code'] if postal else adres[0]
     return list(map(float, geo_objects[0]["GeoObject"]["Point"]["pos"].split())) + adres
 
