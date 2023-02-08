@@ -104,6 +104,7 @@ class MainWindow(QMainWindow):
 
     def sbros_metok(self):
         self.map_point = ''
+        self.adres.setText('')
         self.refresh_map()
 
 
